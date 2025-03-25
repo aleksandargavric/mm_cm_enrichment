@@ -6,9 +6,10 @@ $saved = false;
 
 // Process the form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Gather survey data, annotation responses, updated thinking values, value fields, and non-json responses if any.
+    // Gather survey data, annotation responses, updated thinking values, value fields, non-json responses, and TAM responses.
     $data = [
         'survey'            => $_POST['survey'] ?? [],
+        'tam'               => $_POST['tam'] ?? [],
         'annotations'       => $_POST['annotations'] ?? [],
         'thinking'          => $_POST['thinking'] ?? [],
         'value'             => $_POST['value'] ?? [],
@@ -31,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // Load the JSON file with annotation data.
-$jsonFilePath = __DIR__ . '/ontouml/ollama_responses_2.json';
+$jsonFilePath = __DIR__ . '../ontouml/ollama_responses_2.json';
 $jsonContent  = file_get_contents($jsonFilePath);
 $jsonData     = json_decode($jsonContent, true);
 
@@ -111,6 +112,54 @@ $postedNonJson     = $_POST['non_json_response'] ?? [];
             <option value="Bachelor student" <?php echo (($_POST['survey']['experience'] ?? '') === 'Bachelor student') ? 'selected' : ''; ?>>Bachelor student</option>
             <option value="No experience" <?php echo (($_POST['survey']['experience'] ?? '') === 'No experience') ? 'selected' : ''; ?>>No experience</option>
           </select>
+        </div>
+      </div>
+    </div>
+    <!-- TAM Survey Questions -->
+    <div class="card mb-3">
+      <div class="card-header">
+        Technology Acceptance Model (TAM) Survey
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label>Perceived Usefulness (PU): Does MMeCM enhance your conceptual modeling tasks?</label>
+          <div>
+            <?php for ($i = 1; $i <= 5; $i++): ?>
+              <label class="radio-inline mr-2">
+                  <input type="radio" name="tam[pu]" value="<?php echo $i; ?>" <?php echo (isset($_POST['tam']['pu']) && $_POST['tam']['pu'] == $i) ? 'checked' : ''; ?>> <?php echo $i; ?>
+              </label>
+            <?php endfor; ?>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Perceived Ease of Use (PEOU): Is MMeCM intuitive and user-friendly?</label>
+          <div>
+            <?php for ($i = 1; $i <= 5; $i++): ?>
+              <label class="radio-inline mr-2">
+                  <input type="radio" name="tam[peou]" value="<?php echo $i; ?>" <?php echo (isset($_POST['tam']['peou']) && $_POST['tam']['peou'] == $i) ? 'checked' : ''; ?>> <?php echo $i; ?>
+              </label>
+            <?php endfor; ?>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Attitude Toward Using (ATT): Would you consider using MMeCM in your workflow?</label>
+          <div>
+            <?php for ($i = 1; $i <= 5; $i++): ?>
+              <label class="radio-inline mr-2">
+                  <input type="radio" name="tam[att]" value="<?php echo $i; ?>" <?php echo (isset($_POST['tam']['att']) && $_POST['tam']['att'] == $i) ? 'checked' : ''; ?>> <?php echo $i; ?>
+              </label>
+            <?php endfor; ?>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Behavioral Intention (BI): Would you recommend MMeCM to colleagues?</label>
+          <div>
+            <?php for ($i = 1; $i <= 5; $i++): ?>
+              <label class="radio-inline mr-2">
+                  <input type="radio" name="tam[bi]" value="<?php echo $i; ?>" <?php echo (isset($_POST['tam']['bi']) && $_POST['tam']['bi'] == $i) ? 'checked' : ''; ?>> <?php echo $i; ?>
+              </label>
+            <?php endfor; ?>
+          </div>
         </div>
       </div>
     </div>
