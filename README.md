@@ -1,6 +1,8 @@
 
 # Supplementary Material for "Towards the Enrichment of Conceptual Models with Multimodal Data"
 
+![assets/figures/figure_3_MMeCM_IKEA_example.png]
+
 This repository contains the supplementary code and datasets accompanying the paper **"Towards the Enrichment of Conceptual Models with Multimodal Data"**.
 
 ## Table of Contents
