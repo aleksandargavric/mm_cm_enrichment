@@ -20,34 +20,34 @@ This repository contains the supplementary code and datasets accompanying the pa
 
 ```
 .
-??? README.md
-??? implementation
-?   ??? ontouml_merge_all_ontologies.py
-?   ??? ontouml_filter_ontologies.py
-?   ??? ontouml_ectract_name_values.py
-?   ??? ontouml_concat_names.py
-?   ??? ontouml_prompt_llm.py
-?   ??? ontouml_make_embeddings.py
-?   ??? imagebind
-?   ?   ??? get_imagebind.sh
-?   ??? ontouml
-?       ??? get_ontouml_models.sh
-??? Multimodal-Enriched_dataset_OntoUML_Catalogue
-?   ??? name_embeddings_0.json
-?   ??? name_embeddings_1.json
-?   ??? ...
-?   ??? name_embeddings_15.json
-??? similarity_matrices
-?   ??? text_softmax_scores_0.csv
-?   ??? text_softmax_scores_1.csv
-?   ??? ...
-?   ??? text_softmax_scores_14.csv
-??? survey
-?   ??? [Survey Interface Files]
-??? assets
-    ??? figures
-    ?   ??? [Full resolution figures from the paper]
-    ??? [aux data]
+├── README.md
+├── implementation
+│   ├── ontouml_merge_all_ontologies.py
+│   ├── ontouml_filter_ontologies.py
+│   ├── ontouml_ectract_name_values.py
+│   ├── ontouml_concat_names.py
+│   ├── ontouml_prompt_llm.py
+│   ├── ontouml_make_embeddings.py
+│   ├── imagebind
+│   │   └── get_imagebind.sh
+│   └── ontouml
+│       └── get_ontouml_models.sh
+├── Multimodal-Enriched_dataset_OntoUML_Catalogue
+│   ├── name_embeddings_0.json
+│   ├── name_embeddings_1.json
+│   ├── ...
+│   └── name_embeddings_15.json
+├── similarity_matrices
+│   ├── text_softmax_scores_0.csv
+│   ├── text_softmax_scores_1.csv
+│   ├── ...
+│   └── text_softmax_scores_14.csv
+├── survey
+│   └── [Survey Interface Files]
+└── assets
+    ├── figures
+    │   └── [Full resolution figures from the paper]
+    └── [aux data]
 ```
 
 ## Prerequisites
